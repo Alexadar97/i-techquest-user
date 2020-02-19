@@ -1,0 +1,80 @@
+<section class="home-tech">
+    <div class="container-fluid card">
+        <section class="bg-browse">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center">
+                    <h2 class="head">Browse Practice Exams</h2>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 text-center">
+                    <ul class="list-group mt-2">
+                        <li class="list-item">Home/</li>
+                        <li class="list-item">Exams/</li>
+                        <li class="list-item bold">Category Name</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="category-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="row mb-3">
+                        <div class="card" style="width: 100%;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item head mt-2">Categories</li>
+                                <ng-container *ngFor="let data of allCategories ; let index = index">
+                                <li class="list-group-item"><input id="Networking" class="checkbox  checksingle1"
+                                        type="checkbox" value={{data?._id}} (change)="filterBy($event,'category')"><label class="Categories" for="Networking">{{(data.name != null) ? data.name : '-' }}</label>
+                                </li>
+                            </ng-container>
+                            </ul>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item head mt-2">Level</li>
+                                <li class="list-group-item"><input id="Easy" class="checkbox checksingle2" type="checkbox"
+                                        value="beginner" (change)="filterBy($event,'level')"><label class="Categories"
+                                        for="Easy">Easy</label></li>
+                                <li class="list-group-item"><input id="Medium" class="checkbox checksingle2" type="checkbox"
+                                        value="beginner" (change)="filterBy($event,'level')"><label class="Categories"
+                                        for="Medium">Medium</label></li>
+                                <li class="list-group-item"><input id="Hard" class="checkbox checksingle2" type="checkbox"
+                                        value="beginner" (change)="filterBy($event,'level')"><label class="Categories"
+                                        for="Hard">Hard</label></li>
+                            </ul>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item head mt-2">Technology</li>
+                                <li class="list-group-item"><input id="Azure" class="checkbox checksingle3" type="checkbox"><label
+                                        class="Categories" for="Azure">Azure</label></li>
+                                <li class="list-group-item"><input id="AWS" class="checkbox checksingle3" type="checkbox"><label
+                                        class="Categories" for="AWS">AWS</label></li>
+                                <li class="list-group-item"><input id="Google" class="checkbox checksingle3" type="checkbox"><label
+                                        class="Categories" for="Google">Google Cloud</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+                    <div class="row">
+                        <ng-container *ngFor="let data of SubCategories;let index = index ;">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <div class="card mb-4" routerLink="/exam-instruction">
+                                <img class="img-fluid" src="assets/images/image.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{data.categoryname }}</h5>
+                                    <div class="card-bottom mt-4">
+                                        <a href="#" class="card-link">No. of Questions : 30</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </ng-container>
+                     
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

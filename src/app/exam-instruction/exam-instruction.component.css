@@ -1,0 +1,224 @@
+section.home-tech {
+    padding: 0px 0px 0px 0px;
+    height: auto;
+    background: #F6F9FC;
+}
+h2.head {
+    font-family: Roboto;
+    font-size: 19px;
+    color: #175777;
+    letter-spacing: 0;
+}
+ul.list-group {
+    display: -webkit-inline-box;
+    list-style: none;
+}
+section.bg-browse {
+    padding: 20px 0px 20px 4px;
+    background: #FFFFFF;
+    box-shadow: 0 9px 16px -15px rgba(0,0,0,0.31);
+}
+li.list-item {
+    font-family: Roboto;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: right;
+    line-height: 27px;
+    opacity: .5;
+    cursor: pointer;
+
+}
+li.list-item.bold{
+    opacity: 1;
+    cursor: pointer;
+}
+section.category-bg {
+    padding: 25px 0px 83px 0px;
+}
+ul.list-group.list-group-flush {
+    display: block;
+    border: none;
+}
+li.list-group-item {
+    border: none;
+}
+li.list-group-item {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #175777;
+    letter-spacing: 0;
+    line-height: 0px;
+}
+label.Categories {
+    padding: 0px 0px 0px 14px;
+    cursor: pointer;
+}
+input.checkbox {
+    cursor: pointer;
+}
+li.list-group-item.head {
+    font-weight: bold;
+}
+h5.card-title {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #000000;
+    margin: 0px;
+}
+.table td, .table th{
+    border: none;
+}
+table#table {
+    margin: 14px 0px 44px 37px;
+}
+h5.head-overview{
+    font-family: Roboto;
+    font-size: 21px;
+    color: #175777;
+    letter-spacing: 0;
+}
+td.table-td {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #9EAEB8;
+    letter-spacing: 0;
+}
+th.table-th {
+    font-family: Roboto;
+    font-size: 17px;
+    color: #000000;
+    letter-spacing: 0;
+
+}
+p.para {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #9EAEB8;
+    letter-spacing: 0;
+    padding: 0px 25px 0px 44px;
+}
+button.btn.btn-primary {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    background: #043854;
+    border-radius: 2px;
+    padding: 5px 30px 4px 30px;
+}
+button.btn.btn-yes {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    background: #018305;
+    border-radius: 2px;
+    padding: 1px 19px 1px 19px;
+}
+button.btn.btn-no {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    background: #cb270c;
+    border-radius: 2px;
+    padding: 1px 19px 1px 19px;
+}
+.btn-no:hover{
+    box-shadow: 0 0 6px #cb270c !important;
+    }
+.btn-yes:hover{
+box-shadow: 0 0 6px #018305 !important;
+}
+.btn-primary:hover {
+    background-color: #175777 !important;
+}
+button.btn.btn-primary:active{
+    background: #043854;
+}
+button.btn.btn-primary:focus{
+    box-shadow: none !important;
+}
+@media (max-width:768px){
+    table#table {
+        margin: 0px 0px 5px 0px;
+    }
+    h5.head-overview.ml-5.mt-4{
+        margin:14px 0px 0px 11px !important
+    }
+    p.para{
+        padding: 0px 0px 0px 11px;
+    }
+}
+
+
+/* morphing css */
+nav.navbar.navbar-expand-sm {
+    background-image: linear-gradient(-135deg, #054564 0%, #022B44 100%);
+}
+h2.head-review{
+    text-align: left;
+    font-weight: bold;
+    font-family: Roboto;
+font-size: 20px;
+color: #043E5B;
+letter-spacing: 0.69px;
+padding: 0px 0px 0px 78px;
+}
+h2.head-quest {
+    font-family: Roboto;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.56px;
+    text-align: left;
+}
+p.para-quest {
+    font-family: Roboto;
+    font-size: 19px;
+    color: #000;
+    letter-spacing: 0.56px;
+    text-align: left;
+    max-width: 100%;
+}
+span.icon-close.btn.btn-primary {
+    background: #03344F;
+    border-radius: 4px;
+    width: max-content;
+}
+span.icon-close.btn.btn-primary:hover {
+    background: #03344F !important;
+    color: #fff !important;
+    border-color: #03344F;
+    border-radius: 4px;
+}
+ td.quest {
+    padding: 12px 0px 0px 0px;
+    font-family: Roboto;
+    font-size: 20px;
+    color: #000;
+    letter-spacing: 0.56px;
+    line-height: 46px;
+} 
+td.quest1 {
+    padding: 0px 0px 0px 0px;
+    font-family: Roboto;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 0.56px;
+} 
+td.ans{
+    font-family: Roboto;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.56px;
+}
+/* td.quest {
+    padding: 35px 446px 0px 178px;
+}
+td.yesno{
+    padding: 38px 0px 0px 48px;
+} */
+thead.review-head {
+    background: #03344F;
+}

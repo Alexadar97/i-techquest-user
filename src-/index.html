@@ -1,0 +1,129 @@
+
+<html lang="en"  class="no-js" id="totalelement">
+
+<head>
+  <meta charset="utf-8">
+  <title>ITechquest</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/images/icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700'
+ rel='stylesheet' type='text/css'>
+ <link href="https://fonts.googleapis.com/css?family=Hind|Nunito" rel="stylesheet">
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+ <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
+ <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
+ <meta name="author" content="Codrops" />
+ <link rel="shortcut icon" href="../favicon.ico">
+ <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+ <link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+ <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+ <link rel="stylesheet" type="text/css" href="assets/css/content.css" />
+ <script src="assets/js/modernizr.custom.js"></script>
+
+ <!--google-->
+ <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="1086956094325-h8bj8jrnu4ibsi44chgi8sotg194cobb.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+<script>
+	function onSignIn(googleUser) {
+	  // Useful data for your client-side scripts:
+	  var profile = googleUser.getBasicProfile();
+	  console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+	  console.log('Full Name: ' + profile.getName());
+	  console.log('Given Name: ' + profile.getGivenName());
+	  console.log('Family Name: ' + profile.getFamilyName());
+	  console.log("Image URL: " + profile.getImageUrl());
+	  console.log("Email: " + profile.getEmail());
+
+	  // The ID token you need to pass to your backend:
+	  var id_token = googleUser.getAuthResponse().id_token;
+	  console.log("ID Token: " + id_token);
+	}
+  </script>
+<!-- <script src="assets/js/classie.js"></script>
+		<script src="assets/js/uiMorphingButton_fixed.js"></script>
+		<script>
+			(function() {	
+				var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+				// trick to prevent scrolling when opening/closing button
+				function noScrollFn() {
+					window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+				}
+
+				function noScroll() {
+					window.removeEventListener( 'scroll', scrollHandler );
+					window.addEventListener( 'scroll', noScrollFn );
+				}
+
+				function scrollFn() {
+					window.addEventListener( 'scroll', scrollHandler );
+				}
+
+				function canScroll() {
+					window.removeEventListener( 'scroll', noScrollFn );
+					scrollFn();
+				}
+
+				function scrollHandler() {
+					if( !didScroll ) {
+						didScroll = true;
+						setTimeout( function() { scrollPage(); }, 60 );
+					}
+				};
+
+				function scrollPage() {
+					scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+					didScroll = false;
+				};
+
+				scrollFn();
+				
+				var el = document.querySelector( '.morph-button' );
+				
+				new UIMorphingButton( el, {
+					closeEl : '.icon-close',
+					onBeforeOpen : function() {
+						// don't allow to scroll
+						noScroll();
+					},
+					onAfterOpen : function() {
+						// can scroll again
+						canScroll();
+						// add class "noscroll" to body
+						classie.addClass( document.body, 'noscroll' );
+						// add scroll class to main el
+						classie.addClass( el, 'scroll' );
+					},
+					onBeforeClose : function() {
+						// remove class "noscroll" to body
+						classie.removeClass( document.body, 'noscroll' );
+						// remove scroll class from main el
+						classie.removeClass( el, 'scroll' );
+						// don't allow to scroll
+						noScroll();
+					},
+					onAfterClose : function() {
+						// can scroll again
+						canScroll();
+					}
+				} );
+			})();
+		</script> -->
+
+</html>

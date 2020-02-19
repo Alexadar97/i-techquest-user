@@ -1,0 +1,11 @@
+.footer{
+    background: #043854;
+    border: 1px solid #979797;
+    padding: 26px 0px 26px 0px;
+    margin: -1px;
+}
+h6.footer-head {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+}

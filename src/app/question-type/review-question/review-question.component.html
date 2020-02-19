@@ -1,0 +1,425 @@
+<div class="topheader">
+  <div class="row">
+    <div class="col-md-4">
+      <h5>LOGO</h5>
+    </div>
+    <div class="col-md-4 text-center">
+      <!-- <label>Question</label>&nbsp;&nbsp;<input class=" indexbox" id="goquestion" type="text"
+        value={{currentquestion}}>&nbsp;&nbsp;
+      <button class="btn btn-primary btngo ml-4" style="background-color: #175777;
+    border: none;" (click)="govalue()">Go</button> -->
+    </div>
+    <div class="col-md-4 text-right" style="padding-right:30px">
+      <h5>TIME REMAINING : <span id="timer"></span></h5>
+    </div>
+  </div>
+</div>
+<section class="home-tech">
+  <div class="container-fluid card">
+    <section class="bg-browse">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-center">
+          <!-- <button class="btn btn-primary submitbtn" type="button" (click)="modalfeedback()">Submit Feedback</button> -->
+        </div>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-center"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 text-center">
+          <!-- <button class="btn btn-primary reviewbtn" type="button">Review Questions</button> -->
+          <div class="">
+            <button class="btn btn-primary reviewbtn" type="button" (click)="reviewquestion()">Review Questions</button>
+            <div class="morph-content">
+              <!-- <div>
+                <div class="content-style-overlay">
+                  <nav class="navbar navbar-expand-sm">
+                 
+                    <a class="navbar-brand ml-5" href="#">Logo</a>
+                  </nav>
+                  <div class="container-fluid card">
+                    <section class="bg-browse">
+                      <div class="row">
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                          <h2 class="head-review mt-2">Review Questions</h2>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <section class="table-bg">
+                    <table id="review-table" class="table">
+                      <thead class="review-head">
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td style="width: 82%;" class="quest1 pt-2">Questions</td>
+                          <td class="ans">Answered</td>
+                        </tr>
+                      </thead>
+                    </table>
+                    <table class="table scrollbar" id="scrollbartable">
+                      <tbody>
+                        <ng-container *ngFor="let eachQuestion of questionstype">
+                          <tr class="pointer reviewquestions">
+                            <td style="width: 70px;"></td>
+                            <td style="width: 70px;"></td>
+                            <td class="quest">{{eachQuestion.question1}}</td>
+                            <td class="yesno pl-5 pt-4" style="width: 290px;text-align: center;">{{eachQuestion.yesno}}
+                            </td>
+                          </tr>
+                        </ng-container>
+                      </tbody>
+                    </table>
+                  </section>
+                  <div class="container-fluid">
+
+                    <div class="row mt-5">
+                      <div class="col-md-5"></div>
+                      <div class="col-md-1 text-center">
+                        <span class="icon-close btn btn-primary">Back to Exam</span>
+                      </div>
+                      <div class="col-md-5"></div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
+          <ng-container *ngFor="let data of reviewStatusData; let i = index;">
+            <ng-container *ngIf="(data.status=='answeredflag') && i==(this.currentquestion-1)">
+              <button class="btn btn-primary submitbtn" type="button" (click)="flag(currentquestion)">
+                <img src="assets/images/ungflag.png" style=" width: 18px;">&nbsp;&nbsp;Un Flag
+              </button>
+            </ng-container>
+            <ng-container
+              *ngIf="(data.status=='answered' || data.status=='unanswered'|| data.status=='unvisited'||data.status=='unansweredflag') && i==(this.currentquestion-1)">
+              <button class="btn btn-primary submitbtn" type="button" (click)="flag(currentquestion)">
+                <img src="assets/images/flag.png" style=" width: 18px;">&nbsp;&nbsp; Flag
+              </button>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="category-bg">
+    <div class="container-fluid">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+        <div class="card cardbox">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Question : {{currentquestion}} / {{size}}</h5>
+            </div>
+            <div class="col-md-6 text-right">
+              <button class="btn btn-primary btn-sm btn-next" *ngIf="currentquestion!=1"
+                (click)="previous()">Previous</button>&nbsp;&nbsp;&nbsp;
+              <button class="btn btn-primary btn-sm btn-next" *ngIf="currentquestion!=size"
+                (click)="next()">Next</button>
+
+
+
+            </div>
+          </div>
+          <p>{{question}}</p>
+          <ng-container *ngFor="let data of Quizdata; let i = index;">
+            <div class="checkbox" *ngIf="type=='multiple'">
+              <h4>
+                <label class="i-checks options">
+                  <input type="checkbox" id=checkanswer{{i}} value={{data._id}} (change)="answer($event,'multiple')"
+                    class="checksingle" checked *ngIf="data.checked=='true'">
+                  <input type="checkbox" id=checkanswer{{i}} value={{data._id}} (change)="answer($event,'multiple')"
+                    class="checksingle" *ngIf="data.checked!='true'">
+                  <i></i>
+                  {{data.text}}
+                </label>
+              </h4>
+            </div>
+            <div class="radiobutton" *ngIf="type=='single'">
+              <h4>
+                <label class="i-checks i-checks-sm options">
+                  <input type="radio" class="checksingle" id=checkanswer{{i}} name="type" value="multiple"
+                    value={{data._id}} (change)="answer($event,'single')" checked *ngIf="data.checked=='true'">
+                  <input type="radio" class="checksingle" id=checkanswer{{i}} name="type" value="multiple"
+                    value={{data._id}} (change)="answer($event,'single')" *ngIf="data.checked!='true'">
+                  <i></i>
+                  {{data.text}}
+                </label>
+              </h4>
+            </div>
+          </ng-container>
+
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-2 col-xl-2 col-lg-2 nopadding">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-xl-8 col-lg-8">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-2 col-xl-2 col-lg-2 nopadding text-right">
+
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 text-center">
+          <button class="btn btn-primary btn-sm btn-end " (click)="endexam()">End Exam</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<div class="modal fade" id="feedback" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-md">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-left"> Feedback for question {{currentquestion}}</h4>
+      </div>
+      <div class="modal-body" style="padding: 0px 15px 13px 17px;">
+        <form [formGroup]="SubmitFeedbacks">
+          <div class="form-group">
+            <textarea class="form-control" formControlName="submittext" #feedback id="feedback"></textarea>
+            <small class="text-danger"
+              *ngIf="!SubmitFeedbacks.controls.submittext.valid && SubmitFeedbacks.controls.submittext.touched">
+              Feedback is required</small>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-primary Footsubmitbtn1" data-dismiss="modal">Cancel </button>
+        <button type="button" class="btn btn-sm btn-primary Footsubmitbtn"
+          (click)="ConfirmFeedbackquestion(feedback.value)">Submit </button>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="ednexammodal" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header" style="border:none;">
+        <h4 class="modal-title" style="margin:0">End Exam</h4>
+      </div>
+      <div class="modal-body" style="   padding: 0 20px;">
+        <p>
+          Are you sure want to End Exam?
+        </p>
+      </div>
+      <div class="modal-footer" style="border:none">
+        <button type="button" class="btn btn-sm btn-primary1" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-sm btn-primary1" (click)="confirmexamsubmit()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="reviewquestion" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-xl" style="height: 110vh">
+    <div class="modal-content " style="height: 110vh">
+      <!-- <div class="modal-header" style="border:none;">
+        <h4 class="modal-title" style="margin:0">End Exam</h4>
+      </div> -->
+      <div class="modal-body" style="   padding:0px;">
+        <div class="content-style-overlay">
+          <nav class="navbar navbar-expand-sm">
+
+            <a class="navbar-brand ml-5" href="#">Logo</a>
+          </nav>
+          <div class="container-fluid card">
+            <section class="bg-browse">
+              <div class="row">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <h2 class="head-review mt-2">Review Questions</h2>
+                </div>
+              </div>
+            </section>
+          </div>
+          <section class="table-bg">
+            <!-- <table id="review-table" class="table">
+              <thead class="review-head">
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td style="width: 82%;" class="quest1 pt-2">Questions</td>
+                  <td class="ans">Answered</td>
+                </tr>
+              </thead>
+            </table> -->
+            <table class="table scrollbar" id="scrollbartable">
+              <thead class="review-head">
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td style="width: 82%;" class="quest1 pt-2">Questions</td>
+                  <td class="ans">Answered</td>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <ng-container *ngFor="let data of Object.keys(reviewStatusData); let i=index">
+                  <tr class="pointer reviewquestions">
+                    <td style="width: 70px;"> <img src="assets/images/flag.png" style=" width: 18px;"></td>
+                    <td style="width: 70px;"></td>
+                    <td class="quest">{{reviewStatusData[data]}}</td>
+                    <td class="yesno pl-5 pt-4">
+                      yes
+                    </td>
+                  </tr>
+                </ng-container> -->
+                <ng-container *ngFor="let data of reviewStatusData; let i=index">
+                  <ng-container *ngIf="data.status=='unvisited' " style="cursor:not-allowed">
+                    <tr class="pointer reviewquestions" style="height: 30px" (click)="overview(i+1)">
+                      <td style="width: 70px;"> </td>
+                      <td style="width: 70px;"></td>
+                      <td class="quest">{{data.quizdata.question}}</td>
+                      <td class="yesno ">
+                        No
+                      </td>
+                    </tr>
+                  </ng-container>
+                  <ng-container *ngIf="data.status=='unansweredflag' ">
+                    <tr class="pointer reviewquestions" style="height: 30px" (click)="overview(i+1)">
+                      <td style="width: 70px;"> </td>
+                      <td style="width: 70px;"></td>
+                      <td class="quest">{{data.quizdata.question}}</td>
+                      <td class="yesno">
+                        No
+                      </td>
+                    </tr>
+                  </ng-container>
+                  <ng-container *ngIf="data.status=='answeredflag' ">
+                    <tr class="pointer reviewquestions" style="height: 30px;background: #B6B6B6;" (click)="overview(i+1)">
+                      <td style="width: 70px;"></td>
+                      <td style="width: 70px;"> <img src="assets/images/flag.png" style=" width: 18px;"></td>
+                      <td class="quest">{{data.quizdata.question}}</td>
+                      <td class="yesno ">
+                        Yes
+                      </td>
+                    </tr>
+                  </ng-container>
+                  <ng-container *ngIf="data.status=='answered' ">
+                    <tr class="pointer reviewquestions" style="height: 30px;background: #B6B6B6;" (click)="overview(i+1)">
+                      <td style="width: 70px;"> </td>
+                      <td style="width: 70px;"><img src="assets/images/flag.png" style=" width: 18px;"></td>
+                      <td class="quest">{{data.quizdata.question}}</td>
+                      <td class="yesno ">
+                        Yes
+                      </td>
+                    </tr>
+                  </ng-container>
+                  <ng-container *ngIf="data.status=='unanswered' ">
+                    <tr class="pointer reviewquestions" (click)="overview(i+1)">
+                      <td style="width: 70px;"> </td>
+                      <td style="width: 70px;"></td>
+                      <td class="quest">{{data.quizdata.question}}</td>
+                      <td class="yesno ">
+                        No
+                      </td>
+                    </tr>
+                  </ng-container>
+
+                </ng-container>
+
+              </tbody>
+            </table>
+          </section>
+          <div class="container-fluid">
+
+            <div class="row mt-5">
+              <div class="col-md-5"></div>
+              <div class="col-md-1 text-center">
+                <span class="icon-close btn btn-primary" data-dismiss="modal">Back to Exam</span>
+              </div>
+              <div class="col-md-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer" style="border:none">
+        <button type="button" class="btn btn-sm btn-primary1" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-sm btn-primary1" (click)="confirmexamsubmit()">Yes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="examresult" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-xl" style="height: 110vh;background: #F6F9FC;">
+    <!-- Modal content-->
+    <div class="modal-content" style="height: 110vh;background: #F6F9FC;">
+      <!-- <div class="modal-header">
+          <h4 class="modal-title text-left"> Feedback for question {{currentquestion}}</h4>
+        </div> -->
+      <div class="modal-body">
+        <div class="resultpage">
+          <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="assets/images/checkmark.png">
+                </div>
+                <div class="col-md-8">
+                  <h3 class="result-head">Exam Completed</h3>
+                </div>
+              </div>
+              <div class="row text-center" style="justify-content: center">
+                <h6><b>Here is your result !</b></h6>
+              </div>
+              <div class="row">
+                <table class="result-table">
+                  <tbody>
+                    <tr>
+                      <td class="td1">Number of questions:</td>
+                      <td class="td2">{{resultData.totalquestions}}</td>
+                    </tr>
+                    <tr>
+                      <td class="td1">Time</td>
+                      <td class="td2"> {{resultData.takentime}}</td>
+                    </tr>
+                    <!-- <tr>
+                      <td class="td1"> Total Marks</td>
+                      <td class="td2">30</td>
+                    </tr>
+                    <tr>
+                      <td class="td1">Marks Scored</td>
+                      <td class="td2">25</td>
+                    </tr> -->
+                    <tr>
+                      <td class="td1"> Percentage</td>
+                      <td class="td2"> {{resultData.score  | number:'1.0-0'}}%</td>
+                    </tr>
+                    <!-- <tr>
+                      <td class="td1"> Result</td>
+                      <td>
+                        <p class="td3">Pass</p>
+                      </td>
+                    </tr> -->
+                  </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="row" style="justify-content: center;cursor: pointer">
+<span class="icon-close btn btn-primary" (click)="gobackexam()">Back to Exam</span>         
+              </div>
+            <div class="col-md-4">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-sm btn-primary Footsubmitbtn1" data-dismiss="modal">Cancel </button>
+          <button type="button" class="btn btn-sm btn-primary Footsubmitbtn" (click)="confirmsubmit()">Submit </button> -->
+
+      </div>
+    </div>
+
+  </div>
+</div>

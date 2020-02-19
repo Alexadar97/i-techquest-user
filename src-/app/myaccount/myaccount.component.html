@@ -1,0 +1,91 @@
+<section class="home-tech">
+  <div class="container-fluid card">
+    <section class="bg-browse">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center">
+          <h2 class="head">My Account</h2>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 text-center">
+          <!-- <ul class="list-group mt-2">
+            <li class="list-item">Home/</li>
+            <li class="list-item">Exams/</li>
+            <li class="list-item bold">Category Name</li>
+          </ul> -->
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="category-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">Your Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">Change
+                Password</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="col-md-9">
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="home" role="tabpanel">
+
+              <section *ngIf="enable">
+              <label>Name</label>
+              <input type="text" class="form-control profile-form" value="{{username}}" disabled>
+
+              <label>Email</label>
+              <input type="text" class="form-control profile-form" value="" disabled>
+            </section>
+            <section *ngIf="!enable">
+                <label>Name</label>
+                <input type="text" class="form-control profile-form" value="{{username}}">
+  
+                <label>Email</label>
+                <input type="text" class="form-control profile-form" value="">
+              </section>
+<br>
+              <div class="row">
+                <div class="col-md-3">
+                    <div id="imagePreview" [style.background]="'url(' +  assets2 + ')'">
+                      </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="">
+                        <label for="uploadFile" class="btn btn-sm btn-primary cursor">
+                         Upload new picture</label>
+                        <br>
+                        <input type="file" id="uploadFile" #uploadFile style="display: none" (change)="changeProfileImage($event)"
+                        accept=".png, .jpg, .jpeg" >
+    
+                      </div>
+                      <div class="" [ngSwitch]="getFlagtype()">
+                  <button class="btn btn-md btn-default pull-right"  (click)="changeflagtype(currentquestion-1)" *ngSwitchCase='0'>Edit</button>
+                  <button class="btn btn-md btn-default pull-right"  (click)="changeflagtype(currentquestion-1)" *ngSwitchCase='1'>Save</button>
+                  </div>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+
+              </div>
+            </div>
+            <div class="tab-pane" id="profile" role="tabpanel">..2.</div>
+            <div class="tab-pane" id="messages" role="tabpanel">.3..</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</section>

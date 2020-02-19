@@ -1,0 +1,322 @@
+.submitbtn {
+    font-size: 16px;
+    background: #dbdcdc;
+    border-radius: 4px;
+    border: none;
+    font-family: hind;
+    color: #303030;
+}
+.submitbtn:hover{
+    box-shadow: 0 0 7px #b2b0b0;
+}
+.submitbtn:active{
+    background: #03344F !important;
+}
+.submitbtn:focus{
+    box-shadow: none !important;
+}
+.reviewbtn {
+    background: #03344F;
+    border-radius: 4px;
+    border: none;
+    font-family: hind;
+    padding: 20px 20px;
+    line-height: 0px !important;
+    width: auto;
+    height: auto;
+}
+.btngo:hover{
+    box-shadow: 0 0 6px #175777;
+}
+.reviewbtn:hover{
+    box-shadow: 0 0 5px #03344F;
+}
+section.bg-browse {
+    padding: 20px 0px 20px 4px;
+    background: #FFFFFF;
+    box-shadow: 0 9px 16px -15px rgba(0,0,0,0.31);
+}
+section.category-bg {
+    padding: 34px 0px 83px 0px;
+}
+.cardbox{
+    padding: 20px 45px;
+}
+.cardbox h5{
+    color: #043E5B;
+    font-weight: 600;
+    font-family: Nunito;
+    padding-bottom: 15px;
+}
+.cardbox p{
+    color: #353535;
+    font-size: 18px;
+    font-family: roboto;
+    padding-bottom: 10px;
+}
+.cardbox ul li {
+    list-style: none;
+    padding-bottom: 5px;
+    font-family: roboto;
+    color: #353535;
+    padding-left: 20px;
+}
+.cardbox ul  {
+padding-left:0; 
+}
+p.note {
+    font-family: Nunito !important;
+    font-size: 14px !important;
+    color: #353535;
+}
+.nopadding{
+    padding:0px !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.btn-previous {
+    background: #898989;
+    border-radius: 2px;
+    border: none;
+}
+.btn-next {
+    background: #839F07;
+    border-radius: 2px;
+    border: none;
+}
+.btn-next:hover{
+    box-shadow: 0 0 5px #839F07;
+}
+.btn-previous:hover{
+    box-shadow: 0 0 5px #898989;
+}
+.indexbox{
+    width: 30px;
+    background: #175777;
+    border: none;
+    padding: 4px;
+}
+.topheader {
+    background-image: linear-gradient(-135deg, #054564 0%, #022B44 100%);
+    color: #fff;
+    font-family: roboto;
+    padding: 8px 0 8px 60px;
+}
+.active{
+    color: red;
+}
+.Footsubmitbtn{
+    background: #839F07;
+border-radius: 2px;
+border: none;
+}
+.Footsubmitbtn1{
+    background: #6e0505;
+border-radius: 2px;
+border: none;
+}
+
+.Footsubmitbtn1:hover{
+    box-shadow: 0 0 8px #6e0505;
+}
+
+.Footsubmitbtn:hover{
+    box-shadow: 0 0 8px #839F07;
+}
+.Footsubmitbtn:focus{
+    box-shadow: none !important;
+}
+.modal-header{
+    border-bottom: none;
+}
+.modal-footer{
+    border-top: none;
+}
+
+/* morphing css */
+nav.navbar.navbar-expand-sm {
+    background-image: linear-gradient(-135deg, #054564 0%, #022B44 100%);
+}
+h2.head-review{
+    text-align: left;
+    font-weight: bold;
+    font-family: Roboto;
+font-size: 20px;
+color: #043E5B;
+letter-spacing: 0.69px;
+padding: 0px 0px 0px 78px;
+}
+h2.head-quest {
+    font-family: Roboto;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.56px;
+    text-align: left;
+}
+p.para-quest {
+    font-family: Roboto;
+    font-size: 19px;
+    color: #000;
+    letter-spacing: 0.56px;
+    text-align: left;
+    max-width: 100%;
+}
+span.icon-close.btn.btn-primary {
+    background: #03344F;
+    border-radius: 4px;
+    width: max-content;
+}
+span.icon-close.btn.btn-primary:hover {
+    background: #03344F !important;
+    color: #fff !important;
+    border-color: #03344F;
+    border-radius: 4px;
+}
+ td.quest {
+    padding: 12px 0px 0px 0px;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #000;
+    letter-spacing: 0.56px;
+  
+} 
+td.quest1 {
+    padding: 0px 0px 0px 0px;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.56px;
+} 
+td.ans{
+    font-family: Roboto;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.56px;
+}
+/* td.quest {
+    padding: 35px 446px 0px 178px;
+}
+td.yesno{
+    padding: 38px 0px 0px 48px;
+} */
+thead.review-head {
+    background: #03344F;
+}
+.pointer{
+    cursor: pointer !important;
+}
+.reviewquestions:hover{
+    background: #F3F3F3;
+}
+.table td{
+    vertical-align: middle;
+}
+/*scroll-bar */
+
+#scrollbartable::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background: #F9F9F9;
+border: 1px solid #979797;
+}
+input#goquestion {
+    color: #fff;
+    text-align: center;
+}
+#scrollbartable::-webkit-scrollbar
+{
+	width: 10px;
+    background: #F9F9F9 !important;
+    border: 1px solid #979797;
+    border-radius: 3px;
+}
+
+#scrollbartable::-webkit-scrollbar-thumb
+{
+    
+    background: #D8D8D8;
+border: 1px solid #979797;
+border-radius: 3px;
+}
+.scrollbar
+{
+	background: #fff;
+    /* overflow-y: scroll;
+    display: block; */
+}
+.morph-button-fixed, .morph-button-fixed .morph-content {
+
+     height: 0px !important; 
+}
+.btn-end {
+    padding: 7px 15px;
+    background: #03344f;
+    border: none;
+}
+button.btn.btn-primary1 {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    background: #043854;
+    border-radius: 2px;
+    padding: 1px 19px 1px 19px;
+}
+@media (min-width: 1200px){
+    .modal-xl {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-y: hidden !important;
+    }
+    .modal {
+      overflow-x: hidden;
+      overflow-y: hidden;
+      padding: 0 !important;
+    }
+    }
+    .resultpage {
+        padding: 3% 4%;
+        margin: 6% 5% 6% 5%;
+        background: #FFFFFF;
+        box-shadow: 0 13px 20px -18px rgba(0,0,0,0.28);
+        border-radius: 3px;
+    }
+    .result-table{
+        background: #F6F9FC;
+        border: 1px solid #979797;
+        border-radius: 2px;
+        width: 100%;
+    }
+    .result-table td{
+        padding: 3% 7%;
+    }
+    .result-table .td1{
+        color: #7F7F7F;
+        font-family: roboto;
+    }
+    .result-table .td2{
+        font-family: roboto;
+        color: #000;
+    }
+     .td3{
+        background: #03A697;
+        border-radius: 2px;
+        padding: 6px 7px 6px 7px;
+        margin: 0;
+        text-align: center;
+        color: #fff;
+        font-family: roboto;
+    }
+    .result-head{
+        color: #000;
+    font-weight: 500;
+    font-family: roboto;
+    position: relative;
+    top: 30px;
+    }
+    .options{
+        font-size: 17px;
+        font-family: roboto;
+    }

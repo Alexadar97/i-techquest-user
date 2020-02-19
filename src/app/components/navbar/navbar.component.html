@@ -1,0 +1,386 @@
+<nav class="navbar navbar-expand-md" *ngIf="varsession=='null'">
+
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+     
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        
+    </span>
+</button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <a class="navbar-brand ml-5" href="#">
+          <img src="assets/images/logo.png" style=" width: 100px;">
+        </a>
+    <ul class="navbar-nav Browse">
+      <li class="nav-item Browse mb-3">
+        <div class="collapse navbar-collapse js-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown dropdown-large">
+              <a href="#" class="dropdown-toggle nav-link icons" data-toggle="dropdown">Browse&nbsp;&nbsp;&nbsp;<img
+                  src="assets/images/menu.png" class="toggle-btn"></a>
+
+              <ul class="dropdown-menu dropdown-menu-large row"
+                style=" height: 355px;   width: 35%;padding-bottom: 50px;">
+
+             
+                <ul class="list-menu">
+                    <li class="dropdown-header">COURSE CATEGORIES </li>
+                    <li class="dropdown-submenu ">
+                      <a href="#" class="active">Cloud Computing</a>
+                      <ul class="dropdown-menu submenu active">
+                        <li><a href="#">Amazon (AWS)</a></li>
+                        <li><a href="#">Microsoft Azure</a></li>
+                        <li><a href="#">Google Cloud</a></li>
+                        <li><a href="#">Cloud Security</a></li>
+                        <li><a href="#">Salesforce</a></li>
+                        <li><a href="#">Alibaba Cloud</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">DevOps</a>
+                      <ul class="dropdown-menu submenu">
+                        <li><a href="#">Docker Certified Associate (DCA)</a></li>
+                        <li><a href="#">Kubernetes Training Course</a></li>
+                        <li><a href="#">Puppet Certification</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">Java</a>
+                      <ul class="dropdown-menu submenu">
+                        <li><a href="#">Spring Framework</a></li>
+                        <li><a href="#">Oracle Certified Associate (OCA)</a></li>
+                        <li><a href="#">Oracle Certified Professional (OCP)</a></li>
+                        <li><a href="#">Oracle Certified Associate (OCA)</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">Big data</a>
+                      <ul class="dropdown-menu submenu">
+                        <li><a href="#">3rd leoiovel</a></li>
+                        <li><a href="#">3rd uyilevel</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">Linux</a>
+                      <ul class="dropdown-menu submenu">
+                        <li><a href="#">3rd lehljklvel</a></li>
+                        <li><a href="#">3rd levekyl</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+
+              </ul>
+
+            </li>
+          </ul>
+
+        </div>
+      </li>
+      <li class="nav-item Browse">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button"  [(ngModel)]="filter">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </li> 
+    </ul>
+ 
+    <ul class="navbar-nav ml-auto mr-5">
+      <li class="nav-item">
+        <a class="nav-link nopointer" >Assesment Tool </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nopointer">Support </a>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-success mt-1" (click)="loginpage()">Log In / Sign Up</button>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+<nav class="navbar navbar-expand-md" *ngIf="varsession !=='null'">
+
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+     
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        
+    </span>
+</button>
+ 
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <a class="navbar-brand ml-5" href="#">
+          <img src="assets/images/logo.png" style=" width: 100px;">
+        </a>
+    <ul class="navbar-nav Browse">
+      <li class="nav-item Browse mb-3">
+        <div class="collapse navbar-collapse js-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown dropdown-large">
+              <a href="#" class="dropdown-toggle nav-link icons" data-toggle="dropdown">Browse&nbsp;&nbsp;&nbsp;<img
+                  src="assets/images/menu.png" class="toggle-btn"></a>
+
+              <ul class="dropdown-menu dropdown-menu-large row"
+                style=" height: 355px; width: 35%;padding-bottom: 50px;">
+
+           
+                <ul class="list-menu">
+                  <div class="row">
+                  <div class="col-md-4">
+                    <li class="dropdown-header"> CATEGORIES </li>
+                    </div>
+                    <div class="col-md-8">
+                        <li class="dropdown-header"> TECNOLOGIES </li>
+                        </div>
+                        </div>
+                    <li class="dropdown-submenu "  *ngFor="let data of allExamination ;let index = index ;">
+                      <a href="#" class="active" >{{(data.categoryname != null) ? data.categoryname : '-' }}</a>
+                      <ul class="dropdown-menu submenu active">
+                        <li><a href="#">{{(data.techname != null) ? data.techname : '-' }}</a></li>
+                      
+                      </ul>
+                    </li>
+             
+                  </ul>
+
+              </ul>
+
+            </li>
+          </ul>
+
+        </div>
+      </li>
+      <li class="nav-item Browse">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button"  [(ngModel)]="filter">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+ 
+    <ul class="navbar-nav ml-auto mr-5">
+
+      <li class="nav-item">
+        <a class="nav-link nopointer">Assesment Tool </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nopointer">Support </a>
+      </li>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+        <li><a class="dropdown-item" href="#">level 1</a></li>
+        <li><a class="dropdown-item" href="#">level 1</a></li>
+        <li class="dropdown-divider"></li>
+        </ul>
+      <li class="dropdown profilename">
+        <a data-toggle="dropdown " class="dropdown-toggle logoutdropdown" data-toggle="dropdown">
+
+          <span class="loginPerson">{{username | uppercase}}</span>&nbsp;&nbsp;
+          <ng-container *ngIf='getdata?.charname==true'>
+            <span class="thumb-sm avatar  ">
+              <!-- <img src="{{userimage}}" alt="." class="profileimg"> -->
+              {{x | uppercase}}
+
+            </span>
+          </ng-container>
+          <ng-container *ngIf='getdata?.charname==false'>
+            <span class="  ">
+              <img src="{{userimage}}" alt="." class="profileimg" style="width: 40px;border-radius: 100%;height: 38px;">
+            </span>
+          </ng-container>
+        </a>
+        <ul class="dropdown-menu logout">
+          <li (click)="myAccount()">
+            <a>My Account</a>
+          </li>
+          <li>
+            <a (click)="logout()">Logout</a>
+          </li>
+        </ul>
+        <!-- / dropdown -->
+      </li>
+      <!-- <li class="nav-item">
+            <button class="btn btn-success mt-1"(click)="loginpage()">Log In / Sign Up</button>
+            </li> -->
+    </ul>
+  </div>
+
+</nav>
+
+
+
+<div class="modal fade" id="loginmodal" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content" style="border: none;">
+      <section style="background: #F6F9FC;">
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 nopadding">
+              <img src="assets/images/login-img.png" class="img-fluid" style="    height: 90vh;">
+            </div>
+            <div class="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7 ">
+              <br><br>
+              <button type="submit" class="btn btn-sm  btn-signin" data-dismiss="modal">Back</button>
+              <h1 class="login-logo">LOGO</h1>
+
+              <div class="card-box">
+                <div class="row">
+                  <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 text-center nopadding">
+                    <div class="button-link">
+                      <button class="btn btn-md btn-login g-signin2" data-onsuccess="onSignIn" data-theme="dark"><img
+                          src="assets/images/google.png">&nbsp;&nbsp;Continue with
+                        Google</button>
+                      <button class="btn btn-md btn-login"><img src="assets/images/facebook.png">&nbsp;&nbsp;Continue
+                        with
+                        Facebook</button>
+                      <button class="btn btn-md btn-login"><img src="assets/images/linkedin.png">&nbsp;&nbsp;Continue
+                        with
+                        Linkedin</button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+                    <ng-container *ngIf="loginVssignup==true">
+                      <h4 class="signin-head">Sign In with </h4>
+                      <form [formGroup]="loginForm">
+                        <div class="list-group list-group-sm">
+                          <div class="form-group">
+                            <input type="email" formControlName="email" placeholder="Email" name="email" type="text"
+                              class="no-border form-control inputtext" maxlength="100">
+                          </div>
+                          <small *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.touched"
+                            class="text-danger">Enter
+                            valid E-mail </small>
+
+                          <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control no-border inputtext"
+                              formControlName="password" maxlength="50">
+                          </div>
+                          <small *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched"
+                            class="text-danger">Enter
+                            valid Password </small>
+                        </div>
+                        <small class="text-danger">
+                          <b>{{errormsg}}</b>
+                        </small>
+                        <div class="checkbox">
+                          <!-- <label><input type="checkbox" style="color:#999999"> Remember me</label> -->
+                        </div>
+                        <button type="submit" class="btn btn-sm  btn-signin" (click)="login()">Sign In </button>
+                        <br>
+                        <br>
+                        <div class="text-right">
+                          <a class="signup " (click)="signupnewuser()">
+                            <span class="span1">New User ?&nbsp;
+                            </span>
+                            <span class="span2">Sign Up</span>
+                          </a></div>
+                      </form>
+                    </ng-container>
+                    <ng-container *ngIf="loginVssignup==false">
+                      <ng-container *ngIf="loginVssignup==true">
+                        <button class="btn btn-sm btn-signin" (click)="signupnewuserback()">Back</button>
+                      </ng-container>
+                      <ng-container *ngIf="loginVssignup==false">
+                        <button class="btn btn-sm btn-signin" (click)="signupnewuserback()">Back</button>
+                      </ng-container>
+                      <h4 class="signin-head">Sign Up in with </h4>
+                      <form [formGroup]="signinForm">
+                        <div class="list-group list-group-sm">
+                          <div class="form-group">
+                            <input type="uname" formControlName="username" type="text" placeholder=" Name"
+                              class="no-border form-control inputtext" maxlength="100">
+                          </div>
+                          <small *ngIf="!signinForm.controls.username.valid && signinForm.controls.username.touched"
+                            class="text-danger">Enter
+                            valid First Name </small>
+                          <!-- <div class="form-group">
+                                <input type="uname" formControlName="lastname" type="text" placeholder="Last Name"
+                                  class="no-border form-control inputtext" maxlength="100">
+                              </div>
+                              <small *ngIf="!signinForm.controls.lastname.valid && signinForm.controls.lastname.touched"
+                                class="text-danger">Enter
+                                valid Last Name </small> -->
+                          <div class="form-group">
+                            <input type="email" formControlName="email" placeholder="Email" name="email" type="text"
+                              class="no-border form-control inputtext" maxlength="100">
+                          </div>
+                          <small *ngIf="!signinForm.controls.email.valid && signinForm.controls.email.touched"
+                            class="text-danger">Enter
+                            valid E-mail </small>
+
+                          <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control no-border inputtext"
+                              formControlName="password" maxlength="50">
+                          </div>
+                          <small *ngIf="!signinForm.controls.password.valid && signinForm.controls.password.touched"
+                            class="text-danger">Enter
+                            valid Password </small>
+
+                        </div>
+                        <small class="text-danger">
+                          <b>{{errormsg}}</b>
+                        </small>
+                        <div class="checkbox">
+                          <!-- <label><input type="checkbox" style="color:#999999"> Remember me</label> -->
+                        </div>
+                        <button type="submit" class="btn btn-sm  btn-signin" (click)="signin()">Sign Up </button>
+                        <br>
+                        <br>
+                        <!-- <div class="text-right">
+                    <a  class="signup " (click)="signup()">
+                      <span class="span1">New User ?&nbsp;
+                      </span>
+                      <span class="span2">Sign Up</span>
+                    </a></div> -->
+                      </form>
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-2">
+                <h6 class="footer-head">Privacy Policy</h6>
+              </div>
+              <div class="col-md-2">
+                <h6 class="footer-head">About Aatralz</h6>
+              </div>
+              <div class="col-md-2">
+                <h6 class="footer-head">Training</h6>
+              </div>
+              <div class="col-md-4">
+                <h6 class="footer-head">Copyright all rights reserved | Whatever the name is 2019</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

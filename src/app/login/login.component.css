@@ -1,0 +1,73 @@
+.nopadding{
+    padding: 0px;
+}
+button.btn.btn-md.btn-login {
+    background: #FFFFFF;
+    border: 1px solid #BABABA;
+    border-radius: 2px;
+    width: 90%;
+    margin: 7% 0 2% 0;
+}
+.card-box {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    border-radius: 2px;
+    padding: 10% 7%;
+    margin: 0% 5%;
+}
+h1.login-logo {
+    color: #6B6B6B;
+    font-weight: bold;
+    text-align: center;
+    font-size: 45px;
+    padding-top: 6%;
+}
+.btn-signin {
+    background: #043955;
+    border-radius: 2px;
+    font-family: roboto;
+    color: #fff;
+    font-size: 15px;
+    float: right;
+}
+::placeholder{
+    color: #043955;
+    font-size: 16px;
+    font-family: roboto;
+    font-weight: 500;
+}
+.signin-head{
+    color: #043955;
+    text-align: center;
+    font-size: 23px;
+    font-family: roboto;
+    padding-bottom: 20px;
+}
+.signup{
+    color: #043955 !important;
+    cursor: pointer;
+    font-family: roboto;
+}
+.signup .span1{
+    font-size:12px;
+}
+.signup .span2{
+    font-size: 16px;
+}
+.signup:hover{
+    text-decoration: underline !important;
+}
+.footer{
+    background: #043854;
+    border: 1px solid #979797;
+    padding: 26px 0px 26px 0px;
+    margin: -1px;
+}
+h6.footer-head {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.button-link {
+    margin-top: 20px;
+}

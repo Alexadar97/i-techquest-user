@@ -1,0 +1,104 @@
+<section class="home-tech">
+    <div class="container-fluid card">
+        <section class="bg-browse">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                    <h2 class="head">Browse Practice Exams</h2>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                    <ul class="list-group mt-2">
+                        <li class="list-item" routerLink="/landing">Home/</li>
+                        <li class="list-item bold" routerLink="/home">Exams</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="category-bg">
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <div id="input-group mb-2" class="input-group">
+                        <input type="text" class="form-control" name="search" placeholder="Search For Exams"
+                            (input)="filterbySearch()" [(ngModel)]="filter">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                          </div>
+            </div> -->
+            <br>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="row mb-3">
+                        <div class="card" style="width: 100%;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item head mt-2">Categories</li>
+
+                                <li class="list-group-item" *ngFor="let data of allCategories ; let index = index">
+                                    <label class="i-checks" style="cursor: pointer;">
+                                        <input type="checkbox" value={{data?._id}} class="checksingle3"
+                                            style="cursor: pointer;" (change)="filterBy($event,'category')">&nbsp;
+                                        {{(data.name != null) ? data.name : '-' }}
+                                    </label>
+                                </li>
+
+                            </ul>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item head mt-2">Level</li>
+                                <li class="list-group-item"><input id="Easy" class="checkbox checksingle2"
+                                        type="checkbox" value="Easy" (change)="filterBy($event,'level')"><label
+                                        class="Categories" for="Easy">Easy</label></li>
+                                <li class="list-group-item"><input id="Medium" class="checkbox checksingle2"
+                                        type="checkbox" value="Medium" (change)="filterBy($event,'level')"><label
+                                        class="Categories" for="Medium">Medium</label></li>
+                                <li class="list-group-item"><input id="Hard" class="checkbox checksingle2"
+                                        type="checkbox" value="Hard" (change)="filterBy($event,'level')"><label
+                                        class="Categories" for="Hard">Hard</label></li>
+                            </ul>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item head mt-2">Technology</li>
+
+                                <li class="list-group-item"
+                                    *ngFor="let data of allTechnologies ; let index =index">
+                                    <label class="i-checks" style="cursor: pointer;">
+                                            <input type="checkbox" value={{data?._id}} class="checksingle1"
+                                                style="cursor: pointer;" (change)="filterBy($event,'techname')">&nbsp;
+                                            {{(data.name != null) ? data.name : '-' }}
+                                        </label>
+                                  
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+                    <div class="row">
+                        <ng-container *ngFor="let data of allExamination ;let index = index ;">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                <div class="card mb-4" (click)="Startexam(index)">
+                                    <img class="img-fluid" src="assets/images/image.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{(data.name != null) ? data.name : '-' }}</h5>
+                                        <div class="card-bottom mt-4">
+                                            <a href="#" class="card-link">No. of Questions : {{(data.size != null) ? data.size : '-' }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        <br><br><br>
+        </div>
+    </section>
+</section>

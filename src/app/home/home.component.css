@@ -1,0 +1,108 @@
+section.home-tech {
+    padding: 0px 0px 0px 0px;
+
+    background: #F6F9FC;
+}
+h2.head {
+    font-family: Roboto;
+    font-size: 19px;
+    color: #175777;
+    letter-spacing: 0;
+}
+ul.list-group {
+    display: -webkit-inline-box;
+    list-style: none;
+}
+section.bg-browse {
+    padding: 20px 0px 20px 4px;
+    background: #FFFFFF;
+    box-shadow: 0 9px 16px -15px rgba(0,0,0,0.31);
+}
+li.list-item {
+    font-family: Roboto;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: right;
+    line-height: 27px;
+    opacity: .5;
+    cursor: pointer;
+}
+li.list-item.bold{
+    opacity: 1;
+    cursor: pointer;
+}
+section.category-bg {
+    padding: 10px 0px 10px 0px;
+      /* height: 100vh;   */
+}
+ul.list-group.list-group-flush {
+    display: block;
+    border: none;
+}
+li.list-group-item {
+    border: none;
+}
+li.list-group-item {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #175777;
+    letter-spacing: 0;
+    line-height: 0px;
+}
+label.Categories {
+    padding: 0px 0px 0px 14px;
+    cursor: pointer;
+}
+input.checkbox {
+    cursor: pointer;
+}
+li.list-group-item.head {
+    font-weight: bold;
+}
+h5.card-title {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #000000;
+    margin: 0px;
+}
+.card.mb-4 {
+    cursor: pointer;
+}
+a.card-link {
+    color: #545454;
+}
+a.card-link:hover {
+    color: #545454;
+}
+.input-group {
+    width: 75%;
+    float: right;
+}
+button.btn.btn-secondary.ng-untouched.ng-pristine.ng-valid {
+    background-color: #03334e;
+}
+button.btn.btn-secondary {
+    background: #fff;
+    border: none;
+    color: #000;
+}
+input.form-control {
+    border: none;
+    padding: 0px 0px 0px 36px;
+}
+input.form-control {
+    background: #FFFFFF;
+    box-shadow: 0 9px 16px -15px rgba(0,0,0,0.31);
+    border-radius: 2px;
+}
+button.btn.btn-success {
+    font-size: 12px;
+    background: #06B1A6;
+    border-radius: 2px;
+}
+div#input-group{
+background: #FFFFFF;
+    box-shadow: 0 9px 16px -15px rgba(0,0,0,0.31);
+    border-radius: 2px;
+}

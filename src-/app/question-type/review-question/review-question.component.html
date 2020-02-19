@@ -1,0 +1,224 @@
+<div class="topheader">
+  <div class="row">
+    <div class="col-md-4">
+      <h5>LOGO</h5>
+    </div>
+    <div class="col-md-4 text-center">
+      <label>Question</label>&nbsp;&nbsp;<input class=" indexbox" id="goquestion" type="text"
+        value={{currentquestion}}>&nbsp;&nbsp;
+      <button class="btn btn-primary ml-4" style="background-color: #175777;
+    border: none;" (click)="govalue()">Go</button>
+    </div>
+    <div class="col-md-4 text-right" style="padding-right:30px">
+      <h5>TIME REMAINING : <span id="timer"></span></h5>
+    </div>
+  </div>
+</div>
+<section class="home-tech">
+  <div class="container-fluid card">
+    <section class="bg-browse">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-center">
+          <button class="btn btn-primary submitbtn" type="button" (click)="modalfeedback()">Submit Feedback</button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-center"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 text-center">
+          <!-- <button class="btn btn-primary reviewbtn" type="button">Review Questions</button> -->
+          <div class="morph-button morph-button-overlay morph-button-fixed">
+            <button class="btn btn-primary reviewbtn" type="button">Review Questions</button>
+            <div class="morph-content">
+              <div>
+                <div class="content-style-overlay">
+                  <nav class="navbar navbar-expand-sm">
+                 
+                    <a class="navbar-brand ml-5" href="#">Logo</a>
+                  </nav>
+                  <div class="container-fluid card">
+                    <section class="bg-browse">
+                      <div class="row">
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                          <h2 class="head-review mt-2">Review Questions</h2>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <section class="table-bg">
+                    <table id="review-table" class="table">
+                      <thead class="review-head">
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td style="width: 82%;" class="quest1 pt-2">Questions</td>
+                          <td class="ans">Answered</td>
+                        </tr>
+                      </thead>
+                    </table>
+                    <table class="table scrollbar" id="scrollbartable">
+                      <tbody>
+                        <ng-container *ngFor="let eachQuestion of questionstype">
+                          <tr class="pointer reviewquestions">
+                            <td style="width: 70px;"></td>
+                            <td style="width: 70px;"></td>
+                            <td class="quest">{{eachQuestion.question1}}</td>
+                            <td class="yesno pl-5 pt-4" style="width: 290px;text-align: center;">{{eachQuestion.yesno}}
+                            </td>
+                          </tr>
+                        </ng-container>
+
+                      </tbody>
+                    </table>
+                  </section>
+                  <div class="container-fluid">
+
+                    <div class="row mt-5">
+                      <div class="col-md-5"></div>
+                      <div class="col-md-1 text-center">
+                        <span class="icon-close btn btn-primary">Back to Exam</span>
+                      </div>
+                      <div class="col-md-5"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center" [ngSwitch]="getFlagtype()">
+          <button class="btn btn-primary submitbtn" type="button" (click)="changeflagtype(currentquestion-1)"
+            *ngSwitchCase='0'>
+            <img src="assets/images/flag.png" style=" width: 18px;">&nbsp;&nbsp;Flag for Review
+          </button>
+          <button class="btn btn-primary submitbtn" type="button" (click)="changeflagtype(currentquestion-1)"
+            *ngSwitchCase='1'>
+            <img src="assets/images/ungflag.png" style=" width: 18px;">&nbsp;&nbsp;Un Flag
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="category-bg">
+    <div class="container-fluid">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+        <div class="card cardbox">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Question : {{currentquestion}} / {{questions.length}}</h5>
+            </div>
+            <div class="col-md-6 text-right">
+              <button class="btn btn-primary btn-sm btn-next" *ngIf="currentquestion!=1"
+                (click)="Previous(currentquestion)">Previous</button>&nbsp;&nbsp;&nbsp;
+              <button class="btn btn-primary btn-sm btn-next" *ngIf="currentquestion!=questions.length"
+                (click)="next(currentquestion)">Next</button>
+
+            </div>
+          </div>
+          <p>{{questions[currentquestion-1].question1}}</p>
+          <ul>
+            <li>
+              <input type="checkbox" id="check1">&nbsp;&nbsp;
+              <label for="check1">{{options[currentquestion-1].option1}}</label>
+            </li>
+            <li>
+              <input type="checkbox" id="check2">&nbsp;&nbsp;
+              <label for="check2">{{options[currentquestion-1].option2}}</label>
+            </li>
+            <li>
+              <input type="checkbox" id="check3">&nbsp;&nbsp;
+              <label for="check3">{{options[currentquestion-1].option3}}</label>
+            </li>
+            <li>
+              <input type="checkbox" id="check4">&nbsp;&nbsp;
+              <label for="check4">{{options[currentquestion-1].option4}}</label>
+            </li>
+          </ul>
+          <!-- <ul>
+            <li>
+              <input type="radio" id="check1">&nbsp;&nbsp;
+              <label for="check1">{{options[currentquestion-1].option1}}</label>
+            </li>
+            <li>
+              <input type="radio" id="check2">&nbsp;&nbsp;
+              <label for="check2">{{options[currentquestion-1].option2}}</label>
+            </li>
+            <li>
+              <input type="radio" id="check3">&nbsp;&nbsp;
+              <label for="check3">{{options[currentquestion-1].option3}}</label>
+            </li>
+            <li>
+              <input type="radio" id="check4">&nbsp;&nbsp;
+              <label for="check4">{{options[currentquestion-1].option4}}</label>
+            </li>
+          </ul> -->
+          <!-- <p class="note">Note: There may be more that one right answer</p> -->
+
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-2 col-xl-2 col-lg-2 nopadding">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-xl-8 col-lg-8">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-2 col-xl-2 col-lg-2 nopadding text-right">
+
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 text-center">
+          <button class="btn btn-primary btn-sm btn-end " *ngIf="currentquestion==questions.length"
+            (click)="endexam(currentquestion)">End Exam</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<div class="modal fade" id="submitFeedbackmodal" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-md">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-left"> Feedback for question {{currentquestion}}</h4>
+      </div>
+      <div class="modal-body" style="padding: 0px 15px 13px 17px;">
+        <form [formGroup]="SubmitFeedbacks">
+          <div class="form-group">
+            <textarea class="form-control" formControlName="submittext"></textarea>
+            <small class="text-danger"
+              *ngIf="!SubmitFeedbacks.controls.submittext.valid && SubmitFeedbacks.controls.submittext.touched">
+              Feedback is required</small>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary Footsubmitbtn" data-dismiss="modal">Cancel </button>
+        <button type="button" class="btn btn-primary Footsubmitbtn" (click)="confirmsubmit()">Submit </button>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="ednexammodal" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header" style="border:none;">
+        <h4 class="modal-title" style="margin:0">End Exam</h4>
+      </div>
+      <div class="modal-body" style="   padding: 0 20px;">
+        <p>
+          Are you sure want to End Exam?
+        </p>
+      </div>
+      <div class="modal-footer" style="border:none">
+        <button type="button" class="btn btn-sm btn-primary1" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-sm btn-primary1" (click)="confirmexamsubmit()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

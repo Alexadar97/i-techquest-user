@@ -1,0 +1,39 @@
+.land-head{
+    color: #043955;
+    font-family: roboto;
+    font-weight: bold;
+    padding: 20% 15%;
+}
+.btn-browser {
+    background: #043854;
+    border-radius: 2px;
+    border: none;
+    font-family: roboto;
+    font-size: 16px;
+}
+.content-text p {
+    color: #043955;
+    font-family: roboto;
+    font-size: 17px;
+}
+
+.content-text h4 {
+    color: #043955;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: roboto;
+}
+.content-text {
+    padding: 8% 15%;
+}
+section.browse-exam {
+    background: #F6F9FC;
+}
+h3.image-head {
+    text-align: center;
+    color: #043955;
+    font-family: roboto;
+}
+.btn-browser:hover {
+    background-color: #175777;
+}

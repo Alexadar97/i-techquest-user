@@ -1,0 +1,103 @@
+<section class="home-tech">
+  <div class="container-fluid card">
+    <section class="bg-browse">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center">
+          <h2 class="head">Exam Instructions</h2>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 text-center">
+          <ul class="list-group mt-2">
+            <li class="list-item" routerLink="/landing">Home /</li>
+            <li class="list-item" routerLink="/home">Exams /</li>
+            <li class="list-item bold" routerLink="/exam-instruction">Exam Instruction</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="category-bg">
+    <div class="container-fluid">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">
+        <button class="btn btn-primary" routerLink="/landing">Back</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card mt-3" style="width: 100%">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h5 class="head-overview ml-5 mt-4">Overview</h5>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <table id="table" class="table">
+              <tbody>
+                <tr>
+                  <td class="table-td" style="width: 14%;">Time Limit:</td>
+                  <th class="table-th">00 hr 30mins</th>
+                  <td class="table-td" style="width: 13%;">Total Score:</td>
+                  <th class="table-th" style="width: 18%;">30</th>
+                </tr>
+                <tr>
+                  <td class="table-td">Time Questions:</td>
+                  <th class="table-th">30</th>
+                  <td class="table-td">Passing %:</td>
+                  <th class="table-th">70%</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card my-5 p3-5">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h5 class="head-overview ml-5 mt-4">Instructions</h5>
+            <ul></ul>
+            <p class="para mt-4">1. There will be no negative marking</p>
+            <p class="para mt-4"> 2. There will be “Start exam”option to start the exam  </p>
+            <p class="para mt-4"> 3. Question types: as of now
+              a.Single choice (options will have radio button to select)
+              b.Multiple choice (options will have check box to select the answers) </p>
+            <p class="para mt-4">4. Once Start your exam you can’t pause your exam, time will be running automatically</p>
+            <p class="para mt-4">5. There will be a  timer running at the upper-right corner of the exam screen</p>
+            <p class="para mt-4">6. You can go to random questions in between the exam by typing question number in the top</p>
+            <p class="para mt-4"> 7. Flag for Review option available for all the questions. If you want to review the particular question in the future then you can click the Flag for review button. To Unflag click the button again</p>
+            <p class="para mt-4"> 8. “End Exam” option is in last question page. You can navigate to the previous questions using Previous button option and same for going next.</p>
+            <p class="para mt-4">9. There will be a submit feedback option available for all the questions. User can submit feedback for each and every questions</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center" *ngIf="myaccount?.sessionLogin==true">
+          <button class="btn btn-primary" (click)="startExam()">Start Exam</button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center" *ngIf="myaccount?.sessionLogin==false">
+            <button class="btn btn-primary" (click)="submitlogin()">Login and Start Exam</button>
+          </div>
+      </div>
+    
+    </div>
+  </section>
+</section>
+
+
+
+<div class="modal fade" id="exam" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header" style="border:none">
+          <h4 class="modal-title" style="margin:0">Start Exam</h4>
+        </div>
+        <div class="modal-body" style="   padding: 0 20px;">
+        <p>
+          Are you sure want to start exam?
+        </p>
+      </div>
+      <div class="modal-footer" style="border:none">
+        <button type="button" class="btn btn-sm btn-no" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-sm btn-yes" (click)="confirmstartExam()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

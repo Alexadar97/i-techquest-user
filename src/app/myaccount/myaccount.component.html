@@ -1,0 +1,298 @@
+<section class="home-tech">
+  <div class="container-fluid card">
+    <section class="bg-browse">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 text-center">
+          <h2 class="head">My Account</h2>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 text-center">
+          <!-- <ul class="list-group mt-2">
+            <li class="list-item">Home/</li>
+            <li class="list-item">Exams/</li>
+            <li class="list-item bold">Category Name</li>
+          </ul> -->
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="container-fluid">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <button class="btn btn-md btn-default " routerLink="/landing">Back</button>
+    </div>
+  </div>
+  <section class="category-bg">
+    <div class="container">
+      <div class="row">
+        	<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+              <ul class="nav nav-tabs nav-stacked flex-column">
+                <li class="nav-item"><a  class="nav-link active" href="#tab_a" data-toggle="pill">Your Profile</a></li>
+                <li class="nav-item"><a  class="nav-link" href="#tab_b" data-toggle="pill">History</a></li>
+                <li class="nav-item"><a  class="nav-link" href="#tab_c" data-toggle="pill">Change Password</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_a">
+                
+<div class="tabprofile">
+    <section *ngIf="enable">
+      <form [formGroup]="profileForm">
+        <div class="row">
+        <div class="col-md-12">
+      <label class="proflabel"> Name</label>
+      <input type="text" class="form-control profile-form formicon" value="{{username}}" formControlName="username" disabled>
+      </div>
+      <!-- <div class="col-md-6">
+          <label class="proflabel">Last Name</label>
+          <input type="text" class="form-control profile-form" value="{{username}}" formControlName="name" disabled>
+          </div> -->
+        </div>
+          <div class="col-md-12 nopadding">
+      <label class="proflabel mt-3">Email</label>
+      <input type="text" class="form-control profile-form formicon" value="" formControlName="email" disabled>
+      </div>
+      </form>
+    </section>
+    <section *ngIf="!enable">
+        <form [formGroup]="profileForm">
+<div class="row">
+  <div class="col-md-12">
+          <div class="form-group">
+            <label class="proflabel"> Name</label>
+            <input type="text" class="form-control profile-form " value="" formControlName="username" >
+<small class="text-danger" *ngIf="!profileForm.controls.username.valid && profileForm.controls.username.touched"> Name is required</small>
+</div>
+  </div>
+  <!-- <div class="col-md-6">
+<div class="form-group">
+    <label class="proflabel">Last Name</label>
+    <input type="text" class="form-control profile-form" value="{{username}}" formControlName="name" >
+<small class="text-danger" *ngIf="!profileForm.controls.lname.valid && profileForm.controls.lname.touched">Last Name is required</small>
+</div>
+</div> -->
+</div>
+<div class="form-group">                
+<label class="proflabel">Email</label>
+            <input type="text" class="form-control profile-form" value="" formControlName="email" >
+            <small class="text-danger" *ngIf="!profileForm.controls.email.valid && profileForm.controls.email.touched">Email is required</small>
+          </div> 
+          </form>
+    </section>
+    <br>
+    <div class="row">
+      <div class="col-md-3" >
+        <ng-container>
+        <!-- <img src="assets/images/user.png" style="    width: 90px;"> -->
+            <!-- <div class="avatar-uploaded" *ngIf="!edit">
+        <div class="avatar-edited">
+            <input type='file' id="imageUpload1" accept=".png, .jpg, .jpeg"
+              (change)="changeCategoryImage($event,userid._id)" style="display: none;">
+            <label for="imageUpload1"></label>
+          </div>
+            </div>
+            <div *ngIf="edit"></div> -->
+          <div class="avatar-preview">
+        <!-- <img [src]="url" class="img-fluid bg-img"> -->
+        <div class="img-fluid" id="imagePreview" [style.background]="'url(' +  assets2 + ')'" style="width: 80%;height: 124px;"></div>
+      </div>
+        </ng-container>
+ 
+     
+     
+      </div>
+      <div class="col-md-5" >
+          <div class="logo text-left ">
+              <div class="avatar-upload">
+                  <div class="avatar-edit" *ngIf="!isViewable">
+                      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" (change)="uploadimage($event)" accept="image/png, image/jpeg, image/jpg /*" />
+                      <label for="imageUpload"> Upload new picture</label>
+                    </div>
+                  <div class="avatar-edit" *ngIf="isViewable" style="margin-top: 37px;">
+                      <small class="dissabled"> Upload new picture</small>
+                    </div>
+              </div>
+          
+            </div>
+          <!-- <label for="imageUpload" class="btn btn-md btn-primary cursor">
+            Upload new picture</label>
+          <br>
+          <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" (change)="changeProfileImage($event)"> -->
+
+       
+      </div>
+   
+      <div class="col-md-4">
+          <button class="btn btn-md btn-default " *ngIf="enable" (click)="disable()">Edit</button>
+          <button class="btn btn-md btn-default"type="submit" *ngIf="!enable" (click)="SubmitProfile()">Save</button>
+      </div>
+
+    </div>
+  </div>
+                </div>
+                <div class="tab-pane" id="tab_b">
+                  <div class="tabprofile">
+                <div class="row table-response">
+                  <table class="table historytable">
+                    <ng-container *ngFor="let data of getAllHistory">
+                    <tbody style="border-bottom: 1px solid #979797;">
+                      <tr>
+                        <td rowspan="2"><img src="assets/images/image.png" style="width:100px"></td>
+                        <td colspan="2"><b>{{(data.subcatname != null) ? data.subcatname : '-' }}</b></td>
+                        <td ><b>Result</b></td>
+                       
+                      </tr>
+                      <tr class="subtd">
+                        <td>No. of Questions : {{(data.totalquestion !=null) ? data.totalquestion : '-'}}</td>
+                        <td>Attended on : {{(data.creationdate !=null) ? data.creationdate : '-'}}</td>
+                        <td><p class="result">{{(data.score != null) ? data.score : '-' }}%</p></td>
+                       
+                      </tr>
+                   
+                    </tbody>
+                    </ng-container>
+                  </table>
+                </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab_c">
+               <div class="tabprofile">
+                 <ng-container *ngIf="show=='true'">
+                  <form [formGroup]="changepasswordForm" (ngSubmit)="changepassword()">
+                      <div class="list-group list-group-sm">
+                    
+                          <div class="form-group">
+                            <label>Password</label>
+                              <input type="password" placeholder="Password" class="form-control no-border inputtext"
+                                formControlName="password" maxlength="50"style="width:50%">
+                            </div>
+                            <small *ngIf="!changepasswordForm.controls.password.valid && changepasswordForm.controls.password.touched"
+                              class="text-danger">Enter
+                              valid Password </small>
+                        <div class="form-group">
+                          <label>Confrim Password</label>
+                          <input type="password" placeholder="Confrim Password" class="form-control no-border inputtext"
+                            formControlName="cpassword" maxlength="50"style="width:50%">
+                        </div>
+                        <small *ngIf="!changepasswordForm.controls.cpassword.valid && changepasswordForm.controls.cpassword.touched"
+                          class="text-danger">Enter
+                          valid Password </small>
+
+                      </div>
+                      <small class="text-danger">
+                        <!-- <b>{{errormsg}}</b> -->
+                      </small>
+                      <div class="checkbox">
+                        <!-- <label><input type="checkbox" style="color:#999999"> Remember me</label> -->
+                      </div>
+                      <button type="submit" class="btn btn-sm  btn-signin">submit </button>
+                      <br>
+                      <br>
+                      <!-- <div class="text-right">
+                  <a  class="signup " (click)="signup()">
+                    <span class="span1">New User ?&nbsp;
+                    </span>
+                    <span class="span2">Sign Up</span>
+                  </a></div> -->
+                    </form>
+                    </ng-container>
+                    <ng-container *ngIf="show=='false'">
+                        <a>
+                            <i class="fa fa-thumbs-up hand">
+                            </i>&nbsp;&nbsp;New Password Changed Successfully
+                          </a>
+                          <div class="row back">
+                            <button type="submit" class="btn  home" routerLink="/landing">Back To Home </button>
+                          </div>
+                    </ng-container>
+               </div>
+                </div>
+              </div>
+            </div>
+        <!-- <div class="col-md-3">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Your Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"  aria-selected="false">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages"  aria-selected="false">Change
+                Password</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="col-md-9">
+
+          <div class="tab-content">
+            <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home">
+<div class="tabprofile">
+              <section *ngIf="enable">
+                <form [formGroup]="profileForm">
+                <label class="proflabel">Your Name</label>
+                <input type="text" class="form-control profile-form" value="{{username}}" formControlName="name" disabled>
+                <label class="proflabel">Email</label>
+                <input type="text" class="form-control profile-form" value="" formControlName="email" disabled>
+                </form>
+              </section>
+              <section *ngIf="!enable">
+                  <form [formGroup]="profileForm">
+                    <div class="form-group">
+                      <label class="proflabel">Your Name</label>
+                      <input type="text" class="form-control profile-form" value="{{username}}" formControlName="name" >
+      <small class="text-danger" *ngIf="!profileForm.controls.name.valid && profileForm.controls.name.touched">Your Name is required</small>
+      </div>
+      <div class="form-group">                
+      <label class="proflabel">Email</label>
+                      <input type="text" class="form-control profile-form" value="" formControlName="email" >
+                      <small class="text-danger" *ngIf="!profileForm.controls.email.valid && profileForm.controls.email.touched">Email is required</small>
+                    </div> 
+                    </form>
+              </section>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <ng-container *ngIf="viewimage">
+                  <img src="assets/images/user.png" style="    width: 90px;">
+                  </ng-container>
+                  <ng-container *ngIf="!viewimage">
+                  <img [src]="imgURL" style="    height: 90px;
+                    border-radius: 50%;
+                    width: 90px;" class="" *ngIf="imgURL">
+                    </ng-container>
+                </div>
+                <div class="col-md-5">
+
+                    <label for="uploadFile" class="btn btn-md btn-primary cursor">
+                      Upload new picture</label>
+                    <br>
+                  
+
+                    <input #file type="file" id="uploadFile" accept='image/*' style="display: none"
+                      (change)="preview(file.files)" />
+
+                 
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-md btn-default " *ngIf="enable" (click)="disable()">Edit</button>
+                    <button class="btn btn-md btn-default"type="submit" *ngIf="!enable" (click)="saveprofile()">Save</button>
+                </div>
+
+              </div>
+            </div>
+            </div>
+            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile">
+
+              tityuiyuioyu
+            </div>
+            <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages">.3..</div>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </section>
+</section>

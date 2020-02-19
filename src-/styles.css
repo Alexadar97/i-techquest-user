@@ -1,0 +1,14 @@
+/* nav bar */
+nav.navbar.navbar-expand-md {
+    background-image: linear-gradient(-135deg, #054564 0%, #022B44 100%);
+}
+a.navbar-brand {
+    font-family: Roboto;
+    font-size: 23px;
+    color: #FFFFFF;
+    letter-spacing: 0.64px;
+}
+a.nav-link {
+    color: #fff;
+    font-family: roboto;
+}

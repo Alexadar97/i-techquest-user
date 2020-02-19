@@ -1,0 +1,113 @@
+section.home-tech {
+    padding: 0px 0px 0px 0px;
+    height: auto;
+    background: #F6F9FC;
+    height: 90vh;
+}
+h2.head {
+    font-family: Roboto;
+    font-size: 19px;
+    color: #175777;
+    letter-spacing: 0;
+}
+ul.list-group {
+    display: -webkit-inline-box;
+    list-style: none;
+}
+section.bg-browse {
+    padding: 20px 0px 20px 4px;
+    background: #FFFFFF;
+    box-shadow: 0 9px 16px -15px rgba(0,0,0,0.31);
+}
+li.list-item {
+    font-family: Roboto;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: right;
+    line-height: 27px;
+    opacity: .5;
+    cursor: pointer;
+}
+li.list-item.bold{
+    opacity: 1;
+    cursor: pointer;
+}
+section.category-bg {
+    padding: 34px 0px 83px 0px;
+}
+ul.list-group.list-group-flush {
+    display: block;
+    border: none;
+}
+li.list-group-item {
+    border: none;
+}
+li.list-group-item {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #175777;
+    letter-spacing: 0;
+    line-height: 0px;
+}
+.nav.nav-tabs {
+    float: left;
+    display: block;
+    border-bottom:0;
+    border-right: 1px solid #ddd;
+    background: #FFFFFF;
+box-shadow: -8px 9px 16px -15px rgba(0,0,0,0.31);
+width: 200px;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057;
+    border-color: transparent !important;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0rem!important;
+    border-top-right-radius: 0rem!important;
+}
+.tab-content>.active {
+    display: block;
+}
+a.nav-link {
+    color: #000;
+}
+.tab-content {
+    background: #FFFFFF;
+    box-shadow: -8px 9px 16px -15px rgba(0,0,0,0.31);
+    padding: 6% 12%;
+}
+.profile-form {
+    background: #F4F6F8;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+.btn-primary {
+    background: #839F07;
+    border-radius: 2px;
+    border: none;
+}
+.btn-primary:active {
+    background-color: #acaaaa !important;
+    border-radius: 2px;
+    border: none;
+}
+.btn-default {
+    background: #B2B2B2;
+    border-radius: 2px;
+    color:#fff;
+}
+.btn-primary:hover {
+    box-shadow: 0 0 4px 0px black;
+}
+.btn-default:hover {
+    box-shadow: 0 0 3px black;
+}
